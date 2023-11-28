@@ -1,0 +1,81 @@
+<div class="content">
+    <form [formGroup]="editUForm" (ngSubmit)="editUSubmit()">
+      <div fxLayout="row" fxLayoutAlign="space-around center">
+        <mat-card class="mat-card" color="primary">
+          <mat-card-header class="title">
+            <mat-card-title class="title"> Edit User </mat-card-title>
+          </mat-card-header>
+          <mat-card-content class="mat-card.card-content">
+            <div class="row">
+              <mat-form-field class="mat-form-field" appearance="outline">
+                <mat-label>Usuario</mat-label>
+                <input
+                  matInput
+                  type="text"
+                  placeholder="Ex. a@a.com"
+                  formControlName="user"
+                />
+              </mat-form-field>
+              <mat-form-field class="mat-form-field" appearance="outline">
+                <mat-label>Contraseña</mat-label>
+                <input
+                  matInput
+                  type="password"
+                  placeholder="Type your password"
+                  formControlName="password"
+                />
+              </mat-form-field>
+            </div>
+            <div class="row">
+              <mat-form-field class="mat-form-field" appearance="outline">
+                <mat-label>Nombre</mat-label>
+                <input
+                  matInput
+                  type="text"
+                  placeholder="Ex. José"
+                  formControlName="nombre"
+                />
+              </mat-form-field>
+              <mat-form-field class="mat-form-field" appearance="outline">
+                <mat-label>Apellidos</mat-label>
+                <input
+                  matInput
+                  type="text"
+                  placeholder="Ex. Ruiz"
+                  formControlName="apellidos"
+                />
+              </mat-form-field>
+            </div>
+            <div class="row">
+              <mat-form-field class="mat-form-field" appearance="outline">
+                <mat-label>Fecha de Nacimiento</mat-label>
+                <input matInput [matDatepicker]="picker" formControlName="dob" />
+                <mat-hint>MM/DD/YYYY</mat-hint>
+                <mat-datepicker-toggle
+                  matIconSuffix
+                  [for]="picker"
+                ></mat-datepicker-toggle>
+                <mat-datepicker #picker></mat-datepicker>
+              </mat-form-field>
+              <mat-form-field class="mat-form-field" appearance="outline">
+                <mat-label>Equipo</mat-label>
+                <mat-select formControlName="equipo">
+                  <mat-option *ngFor="let val of equipo" [value]="val"
+                    >{{ val }}
+                  </mat-option>
+                </mat-select>
+              </mat-form-field>
+            </div>
+            <mat-card-actions class="action-b">
+              <button mat-raised-button color="primary" type="submit">
+                Update
+              </button>
+              <button mat-raised-button color="warn" type="button" (click)="close()">Cancel</button>
+            </mat-card-actions>
+            <br />
+          </mat-card-content>
+        </mat-card>
+      </div>
+    </form>
+  </div>
+  

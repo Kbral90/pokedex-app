@@ -1,0 +1,34 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "user": "a@a.com",
+      "password": "123",
+      "nombre": "jose",
+      "apellidos": "portes",
+      "dob": "2023-11-09T06:00:00.000Z",
+      "equipo": "Amarillo"
+    },
+    {
+      "id": 2,
+      "user": "b@a.com",
+      "password": "1234",
+      "nombre": "j",
+      "apellidos": "GL",
+      "dob": "2023-11-09T06:00:00.000Z",
+      "equipo": "Azul"
+    }
+  ],
+  "favUserPokemon": [
+    {
+      "idUser": "1",
+      "idPokem": 1,
+      "id": 1
+    },
+    {
+      "idUser": "1",
+      "idPokem": 2,
+      "id": 1
+    }
+  ]
+}

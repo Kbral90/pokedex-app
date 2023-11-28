@@ -1,0 +1,14 @@
+<div class="content">
+  <form [formGroup]="pokemonDataForm">
+    <mat-card>
+      <mat-card-title></mat-card-title>
+      <mat-card-content>
+        <img mat-card-image src="{{ pokeImg }}" alt="Photo of selected." />
+      </mat-card-content>
+    </mat-card>
+
+    <mat-dialog-actions>
+      <button mat-raised-button color="warn" (click)="close()">Close</button>
+    </mat-dialog-actions>
+  </form>
+</div>

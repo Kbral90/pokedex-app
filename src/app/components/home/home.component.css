@@ -1,0 +1,56 @@
+.content {
+    width: 100%;
+}
+
+.title {
+    color: whitesmoke;
+    padding-top: 10px;
+    display: flex;
+}
+
+body {
+    height: 100%;
+    margin: 0px;
+    font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+.row-toolbar {
+    display: flex;
+    gap: 10px;
+}
+
+.row {
+    gap: 10px;
+}
+
+.mat-card {
+    width: 35%;
+    margin-top: 5%;
+    padding: 0;
+}
+
+.mat-card.card-content {
+    width: 100%;
+    margin-top: 10%;
+    display: flex;
+    justify-content: center;
+}
+
+.mat-form-field {
+    width: 100%;
+    padding: 5px 0px 0px;
+}
+
+.action-b {
+    gap: 10px;
+    justify-content: center;
+    align-items: center;
+}
+
+.mat-label {
+    color: whitesmoke;
+}
+
+.spacer {    
+    flex: 1 1 auto;
+}

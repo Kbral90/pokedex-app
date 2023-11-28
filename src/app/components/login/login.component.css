@@ -1,0 +1,48 @@
+.content {
+    width: 100%;
+}
+
+.title {
+    color: whitesmoke;
+    padding-top: 10px;
+    display: flex;
+}
+
+body {
+    height: 100%;
+    margin: 0px;
+    font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+.mat-card {
+    width: 35%;
+    margin-top: 5%;
+    padding: 0;
+}
+
+.mat-card.card-content {
+    width: 100%;
+    margin-top: 10%;
+    display: flex;
+    justify-content: center;
+}
+
+.mat-form-field {
+    width: 100%;
+    padding: 5px 0px 0px;
+}
+
+.row {
+    display: flex;
+    gap: 10px;
+}
+
+.action-b {
+    gap: 10px;
+    justify-content: center;
+    align-items: center;
+}
+
+.mat-label {
+    color: whitesmoke;
+}

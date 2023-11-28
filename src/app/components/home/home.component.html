@@ -1,0 +1,29 @@
+<div class="row-toolbar">
+  <mat-toolbar color="accent" class="toolbar">
+    <button
+      mat-raised-button
+      [matMenuTriggerFor]="menu"
+      color="primary"
+      aria-label="Example icon-button with menu icon"
+    >
+      <mat-icon>menu</mat-icon>
+      <mat-menu #menu="matMenu">
+        <form [formGroup]="usersForm" (ngSubmit)="openPokemonListD()">
+          <button mat-menu-item>PokeList</button>
+        </form>
+        <form [formGroup]="usersForm" (ngSubmit)="openUserListD()">
+          <button mat-menu-item>UserList</button>
+        </form>
+      </mat-menu>
+    </button>
+
+    <span class="spacer"></span>
+    <span> Bienvenido a PokeApp!</span>
+    <span class="spacer"></span>
+    <form [formGroup]="logOutForm" (ngSubmit)="logOut()">
+      <button mat-raised-button color="primary" type="submit">
+        <mat-icon>exit_to_app</mat-icon>
+      </button>
+    </form>
+  </mat-toolbar>
+</div>

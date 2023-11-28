@@ -1,0 +1,37 @@
+.mat-dialog-content {
+    min-height: 'calc(100vh - 90px)';
+    height : auto;
+    min-width: 700px;
+    display: block;
+    border-radius: 8px;
+    padding: 16px;
+}
+
+.mat-table {
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.mat-header-cell{
+    text-align: center;
+}
+
+.mat-cell{
+    text-align: center;
+}
+
+.mat-form-field {
+    width: 100%;
+    padding: 5px 0px 0px;
+}
+
+.action-b {
+    gap: 10px;
+    justify-content: center;
+    align-items: center;
+}
+
+.mat-label {
+    color: whitesmoke;
+}

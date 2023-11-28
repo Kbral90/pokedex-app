@@ -1,0 +1,48 @@
+<div class="content">
+  <form [formGroup]="loginForm" (ngSubmit)="loginUser()">
+    <div fxLayout="row" fxLayoutAlign="space-around center">
+      <mat-card class="mat-card" color="primary">
+        <!-- <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu"> -->
+      </mat-card>
+
+      <mat-card class="mat-card" color="primary">
+        <mat-card-header>
+          <mat-card-title class="title"> Log In </mat-card-title>
+        </mat-card-header>
+        <mat-card-content class="mat-card.card-content">
+          <mat-form-field class="mat-form-field" appearance="outline">
+            <mat-label>Usuario</mat-label>
+            <input
+              matInput
+              type="email"
+              placeholder="Ex. a@a.com"
+              formControlName="user"
+            />
+          </mat-form-field>
+          <mat-form-field class="mat-form-field" appearance="outline">
+            <mat-label>Contraseña</mat-label>
+            <input
+              matInput
+              type="password"
+              placeholder="Type your password"
+              formControlName="password"
+            />
+          </mat-form-field>
+          <mat-card-actions class="action-b">
+            <button mat-raised-button color="primary" type="submit">
+              Log In
+            </button>
+            <button mat-raised-button color="warn" routerLink="/login" type="button">Cancel</button>
+          </mat-card-actions>
+          <mat-label class="mat-label">
+            Not a member? <a routerLink="/register">Register</a>
+          </mat-label>
+        </mat-card-content>
+      </mat-card>
+
+      <mat-card class="mat-card" color="primary">
+        <!-- <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu"> -->
+      </mat-card>
+    </div>
+  </form>
+</div>
