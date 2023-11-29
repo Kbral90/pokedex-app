@@ -34,6 +34,7 @@ import { PokemonDataComponent } from './components/pokemon-data/pokemon-data.com
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
 import { getAnalytics } from "firebase/analytics";
+import { CommonModule } from '@angular/common';
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
 
@@ -57,8 +58,7 @@ const analytics = getAnalytics(app);
     AppComponent,
     LoginComponent,
     RegisterComponent,
-    UserDataComponent,    
-    PokemonDataComponent
+    UserDataComponent
     
   ],
   imports: [
@@ -80,7 +80,7 @@ const analytics = getAnalytics(app);
     AppRoutingModule,
     MatCardModule,
     FlexLayoutModule,
-
+    CommonModule,
   ],
   providers: [MatSnackBarModule],
   bootstrap: [AppComponent]
