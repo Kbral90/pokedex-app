@@ -130,7 +130,7 @@ export class PokemonListComponent {
 
     this._coreService.registerFavUserP(postData).subscribe(
       response => {
-       console.log(response);
+       //console.log(response);
        this._coreService.openSnackBar('Fav!', 'Ok');
 
      },

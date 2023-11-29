@@ -31,30 +31,34 @@ import { UserListComponent } from './components/user-list/user-list.component';
 import { UserDataComponent } from './components/user-data/user-data.component';
 import { PokemonListComponent } from './components/pokemon-list/pokemon-list.component';
 import { PokemonDataComponent } from './components/pokemon-data/pokemon-data.component';// Import the functions you need from the SDKs you need
+// Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
+import { getAnalytics } from "firebase/analytics";
+import { CommonModule } from '@angular/common';
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
 
 // Your web app's Firebase configuration
+// For Firebase JS SDK v7.20.0 and later, measurementId is optional
 const firebaseConfig = {
   apiKey: "AIzaSyBQ_jdufjJOZgrjV5FIkI87eKu9eyuLs9U",
   authDomain: "poketest-app-78a3e.firebaseapp.com",
   projectId: "poketest-app-78a3e",
   storageBucket: "poketest-app-78a3e.appspot.com",
   messagingSenderId: "766351513340",
-  appId: "1:766351513340:web:474831d73b7ce8f6282979"
+  appId: "1:766351513340:web:474831d73b7ce8f6282979",
+  measurementId: "G-1LQLYJEJK5"
 };
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
-
+const analytics = getAnalytics(app);
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
     RegisterComponent,
-    UserDataComponent,    
-    PokemonDataComponent
+    UserDataComponent
     
   ],
   imports: [
@@ -76,7 +80,7 @@ const app = initializeApp(firebaseConfig);
     AppRoutingModule,
     MatCardModule,
     FlexLayoutModule,
-
+    CommonModule,
   ],
   providers: [MatSnackBarModule],
   bootstrap: [AppComponent]
