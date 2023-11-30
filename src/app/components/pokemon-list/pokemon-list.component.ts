@@ -75,9 +75,7 @@ export class PokemonListComponent {
   getFavPokeList() {    
     this._coreService.getFavUserPList(this.idUser).subscribe({
       next: (resp) => {
-        if (resp.length > 0) {
- 
-          
+        if (resp.length > 0) {          
           // this.dataSourceF = new MatTableDataSource(res.results);
           // this.dataSourceF.sort = this.sort;
           // this.dataSourceF.paginator = this.paginator;

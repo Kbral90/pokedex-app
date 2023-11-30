@@ -1,33 +1,41 @@
 <div class="content">
-  <mat-card>
-    <mat-card-title>
-      <h1>{{ contentObj.name }}</h1>
-    </mat-card-title>
+  <mat-card
+    [style.background-image]="'url(/assets/pokedex.png)'"
+    style="
+      min-height: 100%;
+      background-size: 100% 100%;
+      background-repeat: no-repeat;
+    "
+  >
+    <mat-card-title> </mat-card-title>
     <mat-card-content>
+      <br/>
+      <br/>
+      <br/>
+      <br/>
       <img
+        style="margin-left: 50%;"
         mat-card-image
-        src="{{ urlImage(contentObj.sprite) }}"
+        src="{{ urlImage(contentObj.spriteF) }}"
         alt="Photo of ."
       />
-      <h4>Height: {{ contentObj.height }} "</h4>
-      <h4>Weight: {{ contentObj.weight }} kg.</h4>
-      <h4>Type: {{ contentObj.type }}</h4>
-      <p>Moves: {{ contentObj.moves }}</p>
-      <p>Abilities: {{ contentObj.abilities }}</p>
-      <p>Stats: {{ contentObj.stats }}</p>
-      <p>Games: {{ contentObj.games }}</p>
-    </mat-card-content>
-
-    <mat-card-content class="mat-card.card-content">
-      <!-- <mat-expansion-panel
-          (opened)="panelOpenState = true"
-          (closed)="panelOpenState = false"
-        >
-          <mat-expansion-panel-header>
-            <mat-panel-title> Type </mat-panel-title>
-          </mat-expansion-panel-header>          
-          <p> {{ contentObj.type }}</p>
-        </mat-expansion-panel> -->
+      <img
+      mat-card-image
+      src="{{ urlImage(contentObj.spriteB) }}"
+      alt="Photo of ."
+    />
+      <h1> {{contentObj.order}} - {{ contentObj.name }}</h1>
+      <h4>
+        Height: {{ contentObj.height }} ". Weight: {{ contentObj.weight }} kg.
+        <br />
+        Type: {{ contentObj.type }}
+      </h4>
+      <p>
+        {{ contentObj.stats }} <br />
+        Moves: {{ contentObj.moves }} <br />
+        Abilities: {{ contentObj.abilities }} 
+        <br />Games: {{ contentObj.games }}
+      </p>
     </mat-card-content>
     <mat-dialog-actions>
       <button mat-raised-button color="warn" (click)="close()">Close</button>

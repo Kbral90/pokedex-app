@@ -8,15 +8,15 @@ import { Observable } from 'rxjs';
 })
 export class AuthService {
 
-  private baseUrl = 'http://localhost:3000';
+  private baseUrl = 'https://poketest-app-78a3e-default-rtdb.firebaseio.com/';
 
   constructor(private http: HttpClient) { }
 
   registerUser(userDetails: User) {
-    return this.http.post(`${this.baseUrl}/users`, userDetails);
+    return this.http.post(`${this.baseUrl}/Users`, userDetails);
   }
 
   getUserByEmail(email: string): Observable<User[]> {
-    return this.http.get<User[]>(`${this.baseUrl}/users?user=${email}`);
+    return this.http.get<User[]>(`${this.baseUrl}/Users?user=${email}`);
   }
 }

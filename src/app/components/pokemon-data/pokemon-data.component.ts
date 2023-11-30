@@ -10,7 +10,6 @@ import { MatTreeModule } from '@angular/material/tree';
 import { MatCardModule } from '@angular/material/card';
 import { CommonModule } from '@angular/common';
 import { MatExpansionModule } from '@angular/material/expansion';
-import { count, map, tap } from 'rxjs/operators';
 
 @Component({
   selector: 'app-pokemon-data',
@@ -21,14 +20,11 @@ import { count, map, tap } from 'rxjs/operators';
     MatCardModule, CommonModule, MatExpansionModule],
 })
 export class PokemonDataComponent {
-  panelOpenState = false;
-
-  public pokeImg!: SafeResourceUrl;
+  public pokeFImg!: SafeResourceUrl;
+  public pokeBImg!: SafeResourceUrl;
   public img!: string;
   public contentObj: any = [
   ];
-
-
 
   constructor(
     private readonly sanitizer: DomSanitizer,
@@ -40,10 +36,6 @@ export class PokemonDataComponent {
 
   }
 
-  transform(html: any): string {
-    return this.sanitizer.bypassSecurityTrustHtml(html) as string;
-  }
-
   get pId() {
     return sessionStorage.getItem('pId');
   }
@@ -53,7 +45,6 @@ export class PokemonDataComponent {
   }
 
   urlImage(urlImage: string) {
-    //return this.sanitizer.bypassSecurityTrustResourceUrl(urlImage); 
   return   this.sanitizer.sanitize(SecurityContext.HTML, this.sanitizer.bypassSecurityTrustHtml(urlImage));
   }
 
@@ -62,8 +53,6 @@ export class PokemonDataComponent {
     .subscribe({
       next: (res) => {
         if (res != null) {
-          //this.pokemonDataForm.setValue(res);
-
           let types: string[] = [];
           let type = "";
 
@@ -79,10 +68,8 @@ export class PokemonDataComponent {
           let games: string[] = [];
           let game = "";
 
-          let sprites: string[] = [];
-          let sprite = "";
-
-          this.pokeImg = res.sprites.front_default;
+          this.pokeFImg = res.sprites.front_default;
+          this.pokeBImg = res.sprites.back_default;
           
           types = res.types;
           
@@ -105,7 +92,7 @@ export class PokemonDataComponent {
           stats = res.stats;
           
           stats.forEach((slot?: any) => {
-            stat+= slot.base_stat.toString() + ' ' + slot.stat.name.toString()+'/ ';
+            stat+= slot.stat.name.toString()+': ' + slot.base_stat.toString() + ' '
           });
 
           games = res.game_indices;
@@ -115,18 +102,19 @@ export class PokemonDataComponent {
           });
 
           this.contentObj.id = res.id;
+          this.contentObj.order = res.order;
           this.contentObj.name = res.name;
-          this.contentObj.type = type.substring(0, type.length-1);
+          this.contentObj.type = type.substring(0, type.length-1)+'.';
           this.contentObj.height = res.height;
           this.contentObj.weight = res.weight;
-          this.contentObj.moves = move.substring(0, move.length-2);
-          this.contentObj.abilities = ability.substring(0, ability.length-2);
+          this.contentObj.moves = move.substring(0, move.length-2)+'.';
+          this.contentObj.abilities = ability.substring(0, ability.length-2)+'.';
           this.contentObj.stats = stat.substring(0, stat.length-2);
-          this.contentObj.games = game.substring(0, game.length-2);
-          this.contentObj.sprite = this.pokeImg;
-          //this.contentObj.length = count(this.contentObj);
+          this.contentObj.games = game.substring(0, game.length-2)+'.';
+          this.contentObj.spriteF = this.pokeFImg;
+          this.contentObj.spriteB = this.pokeBImg;
 
-          console.table(this.contentObj);
+          //console.table(this.contentObj);
           // console.log(this.pokeImg);
           // console.log(res.sprites.front_default);
         } else {

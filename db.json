@@ -17,6 +17,24 @@
       "apellidos": "GL",
       "dob": "2023-11-09T06:00:00.000Z",
       "equipo": "Azul"
+    },
+    {
+      "user": "a@c.com",
+      "password": "123",
+      "nombre": "ala",
+      "apellidos": "dafads",
+      "dob": "2023-11-02T06:00:00.000Z",
+      "equipo": "Azul",
+      "id": 3
+    },
+    {
+      "user": "e@e.com",
+      "password": "123",
+      "nombre": "adsfa",
+      "apellidos": "dfadsf",
+      "dob": "2023-11-23T06:00:00.000Z",
+      "equipo": "Azul",
+      "id": 4
     }
   ],
   "favUserPokemon": [
