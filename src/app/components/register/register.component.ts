@@ -74,7 +74,7 @@ export class RegisterComponent {
         }
       },
       error => {
-        this._coreService.openSnackBar('User not found', 'Ok');
+        this._coreService.openSnackBar('User not registered', 'Ok');
       }
 
     )

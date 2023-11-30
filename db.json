@@ -26,6 +26,15 @@
       "dob": "2023-11-02T06:00:00.000Z",
       "equipo": "Azul",
       "id": 3
+    },
+    {
+      "user": "e@e.com",
+      "password": "123",
+      "nombre": "adsfa",
+      "apellidos": "dfadsf",
+      "dob": "2023-11-23T06:00:00.000Z",
+      "equipo": "Azul",
+      "id": 4
     }
   ],
   "favUserPokemon": [
