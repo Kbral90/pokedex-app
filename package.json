@@ -3,10 +3,11 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve json-server --watch db.json",
-    "build": "ng build json-server --watch db.json",
+    "start": "ng serve ",
+    "build": "ng build ",
     "watch": "ng build --watch --configuration development",
-    "test": "ng test"
+    "test": "ng test",
+    "server": "json-server db.json --watch --port 3000"
   },
   "private": true,
   "dependencies": {

@@ -9,8 +9,8 @@ import { UserPok, pokeData } from '../interfaces/auth';
 })
 export class CoreService {
   private listDataURL= 'https://pokeapi.co/api/v2/pokemon?limit=150&offset=0';
-  private dataUrl = 'http://localhost:3000';
-  private userUrl = 'http://localhost:3000/users/';
+  private dataUrl = 'https://poketest-app-78a3e-default-rtdb.firebaseio.com';
+  private userUrl = 'https://poketest-app-78a3e-default-rtdb.firebaseio.com/Users/';
   private offset = 50;
 
   constructor(
