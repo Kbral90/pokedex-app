@@ -38,7 +38,7 @@ export class LoginComponent {
         if (response.length > 0 && response[0].password === password) {
           sessionStorage.setItem('user', user as string);
           sessionStorage.setItem('idUser', response[0].id);
-          console.table(response);
+          //console.table(response);
           
           this._router.navigate(['/home']);
         } else {

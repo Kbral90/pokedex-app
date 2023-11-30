@@ -45,7 +45,6 @@ export class PokemonDataComponent {
   }
 
   urlImage(urlImage: string) {
-    //return this.sanitizer.bypassSecurityTrustResourceUrl(urlImage); 
   return   this.sanitizer.sanitize(SecurityContext.HTML, this.sanitizer.bypassSecurityTrustHtml(urlImage));
   }
 
@@ -54,8 +53,6 @@ export class PokemonDataComponent {
     .subscribe({
       next: (res) => {
         if (res != null) {
-          //this.pokemonDataForm.setValue(res);
-
           let types: string[] = [];
           let type = "";
 
@@ -70,9 +67,6 @@ export class PokemonDataComponent {
 
           let games: string[] = [];
           let game = "";
-
-          let sprites: string[] = [];
-          let sprite = "";
 
           this.pokeFImg = res.sprites.front_default;
           this.pokeBImg = res.sprites.back_default;
@@ -108,6 +102,7 @@ export class PokemonDataComponent {
           });
 
           this.contentObj.id = res.id;
+          this.contentObj.order = res.order;
           this.contentObj.name = res.name;
           this.contentObj.type = type.substring(0, type.length-1)+'.';
           this.contentObj.height = res.height;
@@ -118,9 +113,8 @@ export class PokemonDataComponent {
           this.contentObj.games = game.substring(0, game.length-2)+'.';
           this.contentObj.spriteF = this.pokeFImg;
           this.contentObj.spriteB = this.pokeBImg;
-          //this.contentObj.length = count(this.contentObj);
 
-          console.table(this.contentObj);
+          //console.table(this.contentObj);
           // console.log(this.pokeImg);
           // console.log(res.sprites.front_default);
         } else {

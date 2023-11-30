@@ -16,23 +16,23 @@ export class RegisterComponent {
     user: ['', [Validators.required, Validators.email]],
     password: ['', Validators.required],
     nombre: ['', [Validators.required, Validators.pattern(/^[a-zA-Z]+(?: [a-zA-Z]+)*$/)]],
-    apellidos : ['', [Validators.required, Validators.pattern(/^[a-zA-Z]+(?: [a-zA-Z]+)*$/)]],
+    apellidos: ['', [Validators.required, Validators.pattern(/^[a-zA-Z]+(?: [a-zA-Z]+)*$/)]],
     dob: ['', Validators.required],
     equipo: ['', Validators.required]
   })
 
-   equipo: string[] = [
+  equipo: string[] = [
     'Rojo',
     'Azul',
     'Amarillo',
   ];
 
-  constructor (
+  constructor(
     private _fb: FormBuilder,
     private _authService: AuthService,
     private _router: Router,
     private _coreService: CoreService
-  ){ }
+  ) { }
 
   get user() {
     return this.registerForm.controls['user'];
@@ -55,20 +55,29 @@ export class RegisterComponent {
   }
 
   registerSubmit() {
-    const postData = { ...this.registerForm.value };
-    this._authService.registerUser(postData as User).subscribe(
-       response => {
-      //   if (response. >0) {
-
-        console.log(response);
-        this._coreService.openSnackBar('User registred!', 'Ok');
-        this._router.navigate(['login'])
-        // } else { 
-        //     this._coreService.openSnackBar('User registred!', 'Ok');
-        // }
+    const { user } = this.registerForm.value;
+    this._authService.getUserByEmail(user as string).subscribe(
+      response => {
+        if (response.length > 0) {
+          this._coreService.openSnackBar('User already registered!', 'Ok');
+        } else {
+          const postData = { ...this.registerForm.value };
+          this._authService.registerUser(postData as User).subscribe(
+            response => {
+              //console.log(response);
+              this._coreService.openSnackBar('User registred!', 'Ok');
+              this._router.navigate(['login'])
+            },
+            error => {
+            }
+          )
+        }
       },
       error => {
+        this._coreService.openSnackBar('User not found', 'Ok');
       }
+
     )
   }
 }
+

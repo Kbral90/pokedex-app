@@ -76,11 +76,10 @@ export class UserDataComponent {
     const postData = { ...this.editUForm.value };
     this._coreService.updateUser(parseInt(this.idU!.toString()), postData as User).subscribe(
       response => {
-        console.log(response);
+        //console.log(response);
         this._coreService.openSnackBar('User edited!', 'Ok');        
         this._dialogRef.close();
-
-        this._coreService.getUserList
+        this._coreService.getUserList();
       },
       error => {
         this._coreService.openSnackBar('User not edited!', 'Ok');
